@@ -46,8 +46,11 @@ from PIL import Image
 import requests
 import tempfile
 
+# Textddr nguoi dung nhap API
+
+input_API = st.text_input("Nhập API", "API")
 # URL của API
-API_URL = "http://127.0.0.1:8080/test_post/"
+# API_URL = "http://127.0.0.1:8080/test_post/"
 
 # Tạo biến tạm trong session_state để lưu trữ ảnh đã chụp
 if "img_taked" not in st.session_state:
@@ -73,7 +76,9 @@ if camera_capture:
 
             # Gửi ảnh tới API với trường tên là "img"
             with open(temp.name, "rb") as file:
+                API_URL = input_API + "/test_post/"
                 response = requests.post(API_URL, files={"img": file})
+
 
         # Kiểm tra phản hồi từ API
         if response.status_code == 200:
