@@ -48,7 +48,7 @@ import tempfile
 
 # Textddr nguoi dung nhap API
 
-input_API = st.text_input("Nhập API", "API")
+input_API = st.text_input("Nhập API")
 # URL của API
 # API_URL = "http://127.0.0.1:8080/test_post/"
 
